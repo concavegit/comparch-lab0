@@ -86,6 +86,14 @@ module fulladder4bit_tb ();
         a = 4'b1010;
       b = 4'b1101;
       #600
-        $finish;
+
+        // Commutative property
+        a = 4'b0010;
+      b = 4'b1111;
+      #600
+
+        a = 4'b1111;
+      b = 4'b0010;
+      $finish;
    end
 endmodule
