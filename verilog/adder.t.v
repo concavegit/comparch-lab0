@@ -23,7 +23,7 @@ module fulladder4bit_tb ();
       #600
 
         // -7 - 2 negative overflow, carry
-        a = 4'1001;
+        a = 4'b1001;
       b = 4'b1110;
       #600
 
@@ -39,8 +39,53 @@ module fulladder4bit_tb ();
 
         // 7 + 0 extreme positive addition
         a = 4'b0111;
-      b = 4'0111;
-      
-      $finish;
+      b = 4'b0111;
+      #600
+
+        // 7 + 7 extreme positive addition
+        a = 4'b0111;
+      b = 4'b0111;
+      #600 
+
+        // -8 + 0 extreme negative addition
+        a = 4'b1000;
+      b = 4'b0000;
+      #600
+
+        // extreme negative addition
+        a = 4'b1111;
+      b = 4'b1111;
+      #600
+
+        // 0 + 0 extreme positive addition
+        a = 4'b0000;
+      b = 4'b0000;
+      #600
+
+        // 0 + 7 extreme positive addition
+        a = 4'b0000;
+      b = 4'b0111;
+      #600
+
+        // 5 - 3 positive and negative sum to positive
+        a = 0101;
+      b = 1101;
+      #600
+
+        // 5 - 6 negative and positive = negative
+        a = 4'b0101;
+      b = 4'b1010;
+      #600
+
+        // -3 + 6 negative and positive = positive
+        a = 4'b1101;
+      b = 4'b0110;
+      #600
+
+        // -6 + 3 negative and positive = negative
+        a = 4'b1010;
+      b = 4'b1101;
+      #600
+        $finish;
    end
 endmodule
