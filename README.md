@@ -50,7 +50,7 @@ Test case 6
 
 Extreme 2
 
-)+&
+0+7
 
 This is an extreme case, where zero is added to the highest positive number to test the commutative property.
 
