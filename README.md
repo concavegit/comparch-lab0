@@ -11,7 +11,7 @@ However, it is impossible to design a case where two nonnegative numbers add and
 A case with a nonnegative and negative input with a nonnegative sum without a carry or a nonnegative and negative creating a negative sum with a carry is also impossible.
 That makes for 24 - 2 - 2 - 8 - 2 - 2 = 8 test cases.
 Because this requires 16 inputs, we use every signed 4-bit number exactly once in the inputs of these test cases.
-The remaining 8 test cases are "extreme" test cases, such as 0 + 7, 7 + l, 0 - 8, 8 - 8.
+The remaining 8 test cases are "extreme" test cases, such as 7 + 0, 7 - 8, 0 - 8, 0 + 0.
 
 - Test case 1: inputs nonnegative, sum nonnegative, overflow, no carry: 5 + 3
 - test case 2: inputs nonnegative, sum nonnegative, no overflow, no carry: 4 + 1
