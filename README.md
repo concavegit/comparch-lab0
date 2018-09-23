@@ -1,5 +1,8 @@
 # Lab0
 
+# Timing/Waveform
+
+
 # Test cases
 There are two signed inputs and three outputs to test.
 Therefore, we sought to test nonnegative and negative for both inputs and outputs, creating 6 possible cases.
@@ -21,8 +24,8 @@ The remaining 8 test cases are "extreme" test cases, such as 0 + 7, 7 + l, 0 - 8
 - Test case 9: Extreme case 1: 7 + 7
 - Test case 10: Extreme case 2: 7 + 0
 - Test case 11: Extreme case 3: 7 - 8
-- Test case 12: Extreme case 4: 0 + 0
-- Test case 13: Extreme case 5: 0 - 8
-- Test case 14: Extreme case 6: -8 - 8
-- Test case 15: Extreme case 7: -8 + 7
-- Test case 16: Extreme case 8: -8 + 0
+- Test case 12: Extreme case 4: 0 - 8
+- Test case 13: Extreme case 5: -8 - 8
+- Test Case 14: Extreme case 6: -8 + 7
+- Test case 15: Extreme case 7: 0 + 0
+- Test Case 16: Extreme case 8: -1 - 1

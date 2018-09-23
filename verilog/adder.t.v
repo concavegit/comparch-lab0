@@ -74,24 +74,30 @@ module fulladder4bit_tb ();
       b = 4'b1000;
       #600
 
-        // 0 + 0 extreme
-        a = 4'b0000;
-      b = 4'b0000;
-      #600
-
         // 0 - 8 extreme
         a = 4'b0000;
       b = 4'b1000;
       #600
 
-        // -8 + 7 extreme
+        // -8 - 8 extreme
         a = 4'b1000;
-      b = 4'b0111;
+      b = 4'b1000;
       #600
 
-        // -8 + 0 extreme
-        a = 4'b1000;
+        // 0 - 1 extreme
+        a = 4'b0000;
+      b = 4'b1111;
+      #600
+
+        // 0 + 0 extreme/worst-case delay
+        a = 4'b0000;
       b = 4'b0000;
+      #600
+
+        // -1 - 1 extreme/wost-case delay
+        a = 4'b1111;
+      b = 4'b1111;
+      #600
       $finish;
    end
 endmodule
