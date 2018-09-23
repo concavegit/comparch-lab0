@@ -17,83 +17,81 @@ module fulladder4bit_tb ();
       $dumpvars();
       $monitor("%d %d %d %d %d", a, b, sum, carryout, overflow);
 
-      // 5 + 3 positive overflow, carry
+      // 5 + 3 nonnegative inputs, sum nonnegative, overflow, no carry
       a = 4'b0101;
       b = 4'b0011;
       #600
 
-        // -7 - 2 negative overflow, carry
-        a = 4'b1001;
-      b = 4'b1110;
+        // 4 + 1 both nonegative inputs, sum nonnegative, no overflow, no carry
+        a = 4'b0100;
+      b = 4'b0001;
       #600
 
-        // 5 + 2 positive overflow, no carry
-        a = 4'b1011;
-      b = 4'b0111;
-      #600
-
-        // -3 - 5 negative numbers, no overflow
-        a = 4'b0101;
-      b = 4'b1100;
-      #600
-
-        // 7 + 0 extreme positive addition
-        a = 4'b0111;
-      b = 4'b0111;
-      #600
-
-        // 7 + 7 extreme positive addition
-        a = 4'b0111;
-      b = 4'b0111;
-      #600 
-
-        // -8 + 0 extreme negative addition
-        a = 4'b1000;
-      b = 4'b0000;
-      #600
-
-        // extreme negative addition
-        a = 4'b1111;
-      b = 4'b1111;
-      #600
-
-        // 0 + 0 extreme positive addition
-        a = 4'b0000;
-      b = 4'b0000;
-      #600
-
-        // 0 + 7 extreme positive addition
-        a = 4'b0000;
-      b = 4'b0111;
-      #600
-
-        // 5 - 3 positive and negative sum to positive
-        a = 0101;
-      b = 1101;
-      #600
-
-        // 5 - 6 negative and positive = negative
-        a = 4'b0101;
-      b = 4'b1010;
-      #600
-
-        // -3 + 6 negative and positive = positive
-        a = 4'b1101;
-      b = 4'b0110;
-      #600
-
-        // -6 + 3 negative and positive = negative
-        a = 4'b1010;
-      b = 4'b1101;
-      #600
-
-        // Commutative property
+        // 2 - 1 nonnegative and negative, sum nonnegative, no overflow, carry
         a = 4'b0010;
       b = 4'b1111;
       #600
 
-        a = 4'b1111;
-      b = 4'b0010;
+        // 6 - 7 nonnegative and negative, sum negative, no overflow, no carry
+        a = 4'b0110;
+      b = 4'b1001;
+      #600
+
+        // -2 + 7 negative and nonnegative inputs, sum nonnegative, no
+        // overflow, carry
+        a = 4'b1110;
+      b = 4'b0111;
+      #600 
+
+        // -5 + 0 negative and nonnegative inputs, sum negative, no
+        // overflow, no carry
+        a = 4'b1011;
+      b = 4'b0000;
+      #600
+
+        // -8 - 6 negative inputs, sum negative, overflow, carry
+        a = 4'b1000;
+      b = 4'b1010;
+      #600
+
+        // -4 - 3 negative inputs, sum negative, no overflow, carry
+        a = 4'b1100;
+      b = 4'b1101;
+      #600
+
+        // 7 + 7 extreme
+        a = 4'b0111;
+      b = 4'b0111;
+      #600
+
+        // 7 + 0 extreme
+        a = 4'b0111;
+      b = 4'b0000;
+      #600
+
+        // 7 - 8 extreme
+        a = 4'b0111;
+      b = 4'b1000;
+      #600
+
+        // 0 + 0 extreme
+        a = 4'b0000;
+      b = 4'b0000;
+      #600
+
+        // 0 - 8 extreme
+        a = 4'b0000;
+      b = 4'b1000;
+      #600
+
+        // -8 + 7 extreme
+        a = 4'b1000;
+      b = 4'b0111;
+      #600
+
+        // -8 + 0 extreme
+        a = 4'b1000;
+      b = 4'b0000;
       $finish;
    end
 endmodule

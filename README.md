@@ -1,133 +1,28 @@
 # Lab0
-Test case 1
 
-Positive overflow
-
-5+3 
-
-Due to the structure of 2 complements with 4 bits, we see overflow into negative numbers when the sum of 2 positive numbers is over 7
-
-
-
-Test case 2
-
-Negative overflow
-
--7-2 
-
-Due to the structure of 2 complements with 4 bits, we see overflow into positive numbers when the sum of 2 negative numbers is below -8
-
-
-Test case 3
-
-
-Postive addition
-
-5+2 
-
-This is regular positive adddition, where we add 2 postive numbers to get a positive number.
-
-
-Test case 4
-
-Negative addition
-
--3+-5 
-
-This is regular negative adddition, where we add 2 negative numbers to get a negative number.
-
-
-Test case 5
-
-Extreme 1
-
-7+0
-
-This is an extreme case, where the highest positive number is added to zero.
-
-
-Test case 6
-
-Extreme 2
-
-0+7
-
-This is an extreme case, where zero is added to the highest positive number to test the commutative property.
-
-
-Test case 7
-
-Extreme 3
-
-7+7
-
-This is an extreme case, where the highest positive number is added to itself to check peak overflow.
-
-
-Test case 8
-
-Extreme 4
-
--8+0
-
-This is an extreme case, where the highest negative number is added to zero.
-
-
-Test case 9
-
-Extreme 5
-
-0+-8
-
-This is an extreme case,where zero is added to the highest negative number to test the commutative property.
-
-Test case 10
-
-Extreme 6
-
--8-8
-
-This is an extreme case, where the highest negative number is added to itself to check peak negative overflow.
-
-
-
-Test case 11
-
-Extreme 7
-
-0+0
-
-This is an extreme case, where zero is added to itself.
-
-
-Test case 12
-
-(Larger)Positive + (Smaller)Negative 
-
-5-3
-
-A case where a postive number is added to a smaller negative one.
-
-Test case 13
-
-(Smaller)Positive + (Larger)Negative 
-
-5+-6
-
-A case where a postive number is added to a larger negative one.
-
-Test case 14
-
-(Smaller)Negative + (Larger)Positive 
-
--3+6
-
-A case where a negative number is added to a larger positive one.
-
-Test case 15
-
-(Larger)Negative + (Smaller)Positive 
-
--6+3
-
-A case where a negative number is added to a smaller positive one.
+# Test cases
+There are two signed inputs and three outputs to test.
+Therefore, we sought to test nonnegative and negative for both inputs and outputs, creating 6 possible cases.
+We test each of these for a theoretical carry and overflow, creating 6 * 2 * 2 = 24 test cases.
+However, it is impossible to design a case where two nonnegative numbers add and have a carry bit, a case where two negative numbers and have no carry bit, or a case where a nonnegative/negative set of inputs overflow.
+A case with a nonnegative and negative input with a nonnegative sum without a carry or a nonnegative and negative creating a negative sum with a carry is also impossible.
+That makes for 24 - 2 - 2 - 8 - 2 - 2 = 8 test cases.
+Because this requires 16 inputs, we use every signed 4-bit number exactly once in the inputs of these test cases.
+The remaining 8 test cases are "extreme" test cases, such as 0 + 7, 7 + l, 0 - 8, 8 - 8.
+
+- Test case 1: inputs nonnegative, sum nonnegative, overflow, no carry: 5 + 3
+- test case 2: inputs nonnegative, sum nonnegative, no overflow, no carry: 4 + 1
+- Test case 3: nonnegative and negative inputs, sum nonnegative, no overflow, carry: 2 - 1
+- Test case 4: nonnegative and negative inputs, sum negative, no overflow, no carry: 6 - 7
+- Test case 5: negative and nonnegative inputs, sum nonnegative, no overflow, carry: -2 + 7
+- Test case 6: negative and nonnegative inputs, sum negative, no overflow, no carry: -5 + 0
+- Test case 7: negative inputs, sum negative, overflow, carry: -8 - 6
+- Test case 8: negative inputs, sum negative, no overflow, carry: -4 - 3
+- Test case 9: Extreme case 1: 7 + 7
+- Test case 10: Extreme case 2: 7 + 0
+- Test case 11: Extreme case 3: 7 - 8
+- Test case 12: Extreme case 4: 0 + 0
+- Test case 13: Extreme case 5: 0 - 8
+- Test case 14: Extreme case 6: -8 - 8
+- Test case 15: Extreme case 7: -8 + 7
+- Test case 16: Extreme case 8: -8 + 0
