@@ -29,3 +29,20 @@ The remaining 8 test cases are "extreme" test cases, such as 7 + 0, 7 - 8, 0 - 8
 - Test Case 14: Extreme case 6: -8 + 7
 - Test case 15: Extreme case 7: 0 + 0
 - Test Case 16: Extreme case 8: -1 - 1
+
+# Test Case Failures
+The logic was correct the entire time.
+However, the failures which did occur was the use of `$monitor` without a enough of a delay for a stable signal, and so the last results to print for a given combination of inputs were incorrect.
+The design change was to rate the timing of each chip as such by tracing the gates used (each basic gate is assumed to have a propagation delay of 50 ms):
+
+- halfadder: 50 ms, because the sum and carry bits are independent and computed by a single basic gate.
+- fulladder: 150 ms, because the carry bit requires components from two halfadders (linked by an intermediate sum) and an XOR.
+- adder: 550 ms, because the overflow bit requires information from a sequence of 1 halfadder, 3 fulladders, and an XOR.
+
+Because the adder was computed to have a maximum propagation delay of 550 ms, we changed a delay of 100 ms to a delay of 600 ms to observe the stable signal for 50 ms.
+
+# Testing performed on the FPGA board
+We used the switches and the operator input button to set hte inputs and checked the corresponding LEDs for the correct output.
+These tests came out as successful.
+
+# Summary Statistics
