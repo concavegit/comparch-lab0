@@ -76,11 +76,11 @@ The logic was correct the entire time.
 However, the failures which did occur was the use of `$monitor` without a enough of a delay for a stable signal, and so the last results to print for a given combination of inputs were incorrect.
 The design change was to estimate the timing of each chip to find a reasonable delay to put in the test bench (this was done before making the tables in the above Timing/Waveform section):
 
-- halfadder: 50 ms, because the sum and carry bits are independent and computed by a single basic gate.
-- fulladder: 150 ms, because the carry bit requires components from two halfadders (linked by an intermediate sum) and an XOR.
-- adder: 550 ms, because the overflow bit requires information from a sequence of 1 halfadder, 3 fulladders, and an XOR.
+- halfadder: 50 time units, because the sum and carry bits are independent and computed by a single basic gate.
+- fulladder: 150 time units, because the carry bit requires components from two halfadders (linked by an intermediate sum) and an XOR.
+- adder: 550 time units, because the overflow bit requires information from a sequence of 1 halfadder, 3 fulladders, and an XOR.
 
-Because the adder was estimated to have a maximum propagation delay of 550 ms, we changed a delay of 100 ms to a delay of 600 ms to observe the stable signal for 50 ms.
+Because the adder was estimated to have a maximum propagation delay of 550 time units, we changed a delay of 100 time units to a delay of 600 time units to observe the stable signal for 50 time units.
 
 # Testing performed on the FPGA board
 We used the switches and the operator input button to set hte inputs and checked the corresponding LEDs for the correct output.
