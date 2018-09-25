@@ -31,6 +31,13 @@ Therefore, the 4-bit adder is:
 | C3 | 7    | 7    | 5    | 3    |
 | O  | 8    | 8    | 6    | 4    |
 
+The amount of gates in the maximum path for an n-bit adder is 2n.
+However, the carry bits all require either an AND from the halfadder level.
+Of the two halfadders used in the fulladders, the first one (`h0` in `fulladder.v`)can be driven by the inputs in the bus from the beginning.
+However, the second halfadders (`h1` in `fulladder.v`) requires a carry bit from the preceding adder.
+If the carry bit is 0, there is no need to wait for the result of `h0` because to the annihilation of ands will cause the half-adder to output a carry of 0 allowing any gate relying on this output to be 'early'.
+Therefore, to test the maximum propagation delay, begin with a case in which there is always a carry of 1 for the fulladders and then check the time until the last signal is driven from X.
+
 # Test cases
 There are two signed inputs and three outputs to test.
 Therefore, we sought to test nonnegative and negative for both inputs and outputs, creating 6 possible cases.
@@ -41,6 +48,7 @@ That makes for 24 - 2 - 2 - 8 - 2 - 2 = 8 test cases.
 Because this requires 16 inputs, we use every signed 4-bit number exactly once in the inputs of these test cases.
 The remaining 8 test cases are "extreme" test cases, such as 7 + 0, 7 - 8, 0 - 8, 0 + 0.
 
+- Test case 0: Always carry to demonstrate maximum propagation delay.
 - Test case 1: inputs nonnegative, sum nonnegative, overflow, no carry: 5 + 3
 - test case 2: inputs nonnegative, sum nonnegative, no overflow, no carry: 4 + 1
 - Test case 3: nonnegative and negative inputs, sum nonnegative, no overflow, carry: 2 - 1
@@ -56,7 +64,6 @@ The remaining 8 test cases are "extreme" test cases, such as 7 + 0, 7 - 8, 0 - 8
 - Test case 13: Extreme case 5: -8 - 8
 - Test Case 14: Extreme case 6: -8 + 7
 - Test case 15: Extreme case 7: 0 + 0
-- Test Case 16: Extreme case 8: -1 - 1
 
 # Test Case Failures
 The logic was correct the entire time.

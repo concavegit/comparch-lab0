@@ -17,6 +17,11 @@ module fulladder4bit_tb ();
       $dumpvars();
       $monitor("%d %d %d %d %d", a, b, sum, carryout, overflow);
 
+      // Always carry to demonstrate maximum propagation
+      a = 4'b0101;
+      b = 4'b1011;
+      #600
+
       // 5 + 3 nonnegative inputs, sum nonnegative, overflow, no carry
       a = 4'b0101;
       b = 4'b0011;
@@ -89,14 +94,9 @@ module fulladder4bit_tb ();
       b = 4'b1111;
       #600
 
-        // 0 + 0 extreme/worst-case delay
+        // 0 + 0 extreme
         a = 4'b0000;
       b = 4'b0000;
-      #600
-
-        // -1 - 1 extreme/wost-case delay
-        a = 4'b1111;
-      b = 4'b1111;
       #600
       $finish;
    end

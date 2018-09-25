@@ -1,6 +1,6 @@
 /*
  * Module halfadder
- * 
+ *
  * Inputs: a, b
  * Outputs: sum, carry
  * Function: sum = LSB of a + b
@@ -18,4 +18,5 @@ module halfadder (input a, b,
 
    // The LSB is 1 iff both bits are 0
    `AND (carry, a, b);
+
 endmodule
