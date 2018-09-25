@@ -1,6 +1,35 @@
 # Lab0
 
 # Timing/Waveform
+The tables for the amount of gates each input passes through to reach each output are shown below:
+
+The half adder is
+
+|       | A | B |
+|-------|---|---|
+| Sum   | 1 | 1 |
+| Carry | 1 | 1 |
+
+The full adder is
+
+|       | A | B | C |
+|-------|---|---|---|
+| Sum   | 2 | 2 | 1 |
+| Carry | 3 | 3 | 2 |
+
+Therefore, the 4-bit adder is:
+
+|    | A/B0 | A/B1 | A/B2 | A/B3 |
+|----|------|------|------|------|
+| S0 | 1    |      |      |      |
+| C0 | 1    |      |      |      |
+| S1 | 2    | 2    |      |      |
+| C1 | 3    | 3    |      |      |
+| S2 | 4    | 4    | 2    |      |
+| C2 | 5    | 5    | 3    |      |
+| S3 | 6    | 6    | 4    | 2    |
+| C3 | 7    | 7    | 5    | 3    |
+| O  | 8    | 8    | 6    | 4    |
 
 # Test cases
 There are two signed inputs and three outputs to test.
