@@ -4,12 +4,14 @@
 The tables for the amount of gates each input passes through to reach each output are shown below:
 
 The half adder is
+
 |       | A | B |
 |-------|---|---|
 | Sum   | 1 | 1 |
 | Carry | 1 | 1 |
 
 The full adder is
+
 |       | A | B | C |
 |-------|---|---|---|
 | Sum   | 2 | 2 | 1 |
