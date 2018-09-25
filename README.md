@@ -31,12 +31,17 @@ Therefore, the 4-bit adder is:
 | C3 | 7    | 7    | 5    | 3    |
 | O  | 8    | 8    | 6    | 4    |
 
-The amount of gates in the maximum path for an n-bit adder is 2n.
-However, the carry bits all require either an AND from the halfadder level.
-Of the two halfadders used in the fulladders, the first one (`h0` in `fulladder.v`)can be driven by the inputs in the bus from the beginning.
+The amount of gates in the critical path for an n-bit adder is 2n, as the overflow bit is one xor gate from the carryout, and the carryout follows a pattern of 2n - 1 from the table.
+
+When deciding a wost-case delay test case, it is important to note that the carry bits all require either an AND from the halfadder level.
+Of the two halfadders used in the fulladders, the first one (`h0` in `fulladder.v`) can be driven by the inputs in the bus from the beginning.
 However, the second halfadders (`h1` in `fulladder.v`) requires a carry bit from the preceding adder.
 If the carry bit is 0, there is no need to wait for the result of `h0` because to the annihilation of ands will cause the half-adder to output a carry of 0 allowing any gate relying on this output to be 'early'.
-Therefore, to test the maximum propagation delay, begin with a case in which there is always a carry of 1 for the fulladders and then check the time until the last signal is driven from X.
+Therefore, to test the maximum propagation delay, begin with a case in which there is always a carry of 1 for the fulladders and then check the time until the last signal is driven from X, as shown below:
+
+![](res/wave.png)
+
+Since each gate has a delay of 50 time units, the maximum propagation delay, present on the overflow signal, is 400, which agrees with the table above (8 * 50 = 400).
 
 # Test cases
 There are two signed inputs and three outputs to test.
