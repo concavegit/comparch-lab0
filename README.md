@@ -5,8 +5,9 @@ The tables for the amount of gates each input passes through to reach each outpu
 
 The half adder is
 |       | A | B |
+|-------|---|---|
 | Sum   | 1 | 1 |
-| Carry | 1 | 1  |
+| Carry | 1 | 1 |
 
 The full adder is
 |       | A | B | C |
@@ -17,6 +18,7 @@ The full adder is
 Therefore, the 4-bit adder is:
 
 |    | A/B0 | A/B1 | A/B2 | A/B3 |
+|----|------|------|------|------|
 | S0 | 1    |      |      |      |
 | C0 | 1    |      |      |      |
 | S1 | 2    | 2    |      |      |
