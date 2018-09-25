@@ -42,6 +42,7 @@ Therefore, to test the maximum propagation delay, begin with a case in which the
 ![](res/wave.png)
 
 Since each gate has a delay of 50 time units, the maximum propagation delay, present on the overflow signal, is 400, which agrees with the table above (8 * 50 = 400).
+The sum and carry outputs also agree at 6 * 50 = 300 and 7 * 50 = 350 respectively.
 
 # Test cases
 There are two signed inputs and three outputs to test.
