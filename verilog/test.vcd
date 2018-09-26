@@ -1,5 +1,5 @@
 $date
-	Tue Sep 25 21:46:31 2018
+	Tue Sep 25 22:07:49 2018
 $end
 $version
 	Icarus Verilog
@@ -10,124 +10,128 @@ $end
 $scope module fulladder4bit_tb $end
 $var wire 4 ! sum [3:0] $end
 $var wire 1 " overflow $end
-$var wire 1 # carryout $end
+$var wire 1 # carry $end
 $var reg 4 $ a [3:0] $end
 $var reg 4 % b [3:0] $end
-$var integer 32 & ii [31:0] $end
+$var reg 16 & testCarry [15:0] $end
+$var reg 16 ' testOverflow [15:0] $end
+$var integer 32 ( ii [31:0] $end
 $scope module add $end
-$var wire 4 ' a [3:0] $end
-$var wire 4 ( b [3:0] $end
+$var wire 4 ) a [3:0] $end
+$var wire 4 * b [3:0] $end
 $var wire 1 " overflow $end
-$var wire 4 ) sum [3:0] $end
+$var wire 4 + sum [3:0] $end
 $var wire 1 # carryout $end
-$var wire 1 * carry2 $end
-$var wire 1 + carry1 $end
-$var wire 1 , carry0 $end
+$var wire 1 , carry2 $end
+$var wire 1 - carry1 $end
+$var wire 1 . carry0 $end
 $scope module add0 $end
-$var wire 1 - a $end
-$var wire 1 . b $end
-$var wire 1 + carry $end
-$var wire 1 / sum0 $end
-$var wire 1 0 sum $end
-$var wire 1 1 carry1 $end
-$var wire 1 2 carry0 $end
-$var wire 1 , c $end
+$var wire 1 / a $end
+$var wire 1 0 b $end
+$var wire 1 - carry $end
+$var wire 1 1 sum0 $end
+$var wire 1 2 sum $end
+$var wire 1 3 carry1 $end
+$var wire 1 4 carry0 $end
+$var wire 1 . c $end
 $scope module h0 $end
-$var wire 1 - a $end
-$var wire 1 . b $end
-$var wire 1 2 carry $end
-$var wire 1 / sum $end
+$var wire 1 / a $end
+$var wire 1 0 b $end
+$var wire 1 4 carry $end
+$var wire 1 1 sum $end
 $upscope $end
 $scope module h1 $end
-$var wire 1 / a $end
-$var wire 1 1 carry $end
-$var wire 1 0 sum $end
-$var wire 1 , b $end
+$var wire 1 1 a $end
+$var wire 1 3 carry $end
+$var wire 1 2 sum $end
+$var wire 1 . b $end
 $upscope $end
 $upscope $end
 $scope module add1 $end
-$var wire 1 3 a $end
-$var wire 1 4 b $end
-$var wire 1 + c $end
-$var wire 1 * carry $end
-$var wire 1 5 sum0 $end
-$var wire 1 6 sum $end
-$var wire 1 7 carry1 $end
-$var wire 1 8 carry0 $end
+$var wire 1 5 a $end
+$var wire 1 6 b $end
+$var wire 1 - c $end
+$var wire 1 , carry $end
+$var wire 1 7 sum0 $end
+$var wire 1 8 sum $end
+$var wire 1 9 carry1 $end
+$var wire 1 : carry0 $end
 $scope module h0 $end
-$var wire 1 3 a $end
-$var wire 1 4 b $end
-$var wire 1 8 carry $end
-$var wire 1 5 sum $end
+$var wire 1 5 a $end
+$var wire 1 6 b $end
+$var wire 1 : carry $end
+$var wire 1 7 sum $end
 $upscope $end
 $scope module h1 $end
-$var wire 1 5 a $end
-$var wire 1 + b $end
-$var wire 1 7 carry $end
-$var wire 1 6 sum $end
+$var wire 1 7 a $end
+$var wire 1 - b $end
+$var wire 1 9 carry $end
+$var wire 1 8 sum $end
 $upscope $end
 $upscope $end
 $scope module add2 $end
-$var wire 1 9 a $end
-$var wire 1 : b $end
-$var wire 1 * c $end
+$var wire 1 ; a $end
+$var wire 1 < b $end
+$var wire 1 , c $end
 $var wire 1 # carry $end
-$var wire 1 ; sum0 $end
-$var wire 1 < sum $end
-$var wire 1 = carry1 $end
-$var wire 1 > carry0 $end
+$var wire 1 = sum0 $end
+$var wire 1 > sum $end
+$var wire 1 ? carry1 $end
+$var wire 1 @ carry0 $end
 $scope module h0 $end
-$var wire 1 9 a $end
-$var wire 1 : b $end
-$var wire 1 > carry $end
-$var wire 1 ; sum $end
+$var wire 1 ; a $end
+$var wire 1 < b $end
+$var wire 1 @ carry $end
+$var wire 1 = sum $end
 $upscope $end
 $scope module h1 $end
-$var wire 1 ; a $end
-$var wire 1 * b $end
-$var wire 1 = carry $end
-$var wire 1 < sum $end
+$var wire 1 = a $end
+$var wire 1 , b $end
+$var wire 1 ? carry $end
+$var wire 1 > sum $end
 $upscope $end
 $upscope $end
 $scope module half $end
-$var wire 1 ? a $end
-$var wire 1 @ b $end
-$var wire 1 , carry $end
-$var wire 1 A sum $end
+$var wire 1 A a $end
+$var wire 1 B b $end
+$var wire 1 . carry $end
+$var wire 1 C sum $end
 $upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-xA
-1@
-1?
+xC
+1B
+1A
+x@
+x?
 x>
 x=
-x<
-x;
-0:
-09
+0<
+0;
+x:
+x9
 x8
 x7
-x6
-x5
-04
-13
+06
+15
+x4
+x3
 x2
 x1
-x0
-x/
-1.
-0-
+10
+0/
+x.
+x-
 x,
-x+
-x*
-bx )
-b11 (
-b101 '
-b0 &
+bx +
+b11 *
+b101 )
+b0 (
+bx '
+bx &
 b11 %
 b101 $
 x#
@@ -136,443 +140,443 @@ bx !
 $end
 #50
 bx0 !
-bx0 )
-0A
-1,
-1/
-02
-15
-08
-0;
-0>
+bx0 +
+0C
+1.
+11
+04
+17
+0:
+0=
+0@
 #100
 bx00 !
-bx00 )
-00
-11
-0=
+bx00 +
+02
+13
+0?
 #150
-1+
+1-
 0#
 #200
 bx000 !
-bx000 )
-06
-17
+bx000 +
+08
+19
 #250
-1*
+1,
 #300
 b1000 !
-b1000 )
-1<
+b1000 +
+1>
 1"
 #600
-0.
-0?
+00
+0A
 b1 %
-b1 (
+b1 *
 b100 $
-b100 '
-b1 &
+b100 )
+b1 (
 #650
-0/
-b1001 !
-b1001 )
-1A
-0,
-#700
 01
+b1001 !
+b1001 +
+1C
+0.
+#700
+03
 #750
-0+
+0-
 #800
 b1101 !
-b1101 )
-16
-07
+b1101 +
+18
+09
 #850
-0*
+0,
 #900
 b101 !
-b101 )
-0<
+b101 +
+0>
 0"
 #1200
-1.
-14
-1:
-1-
-03
+10
+16
+1<
+1/
+05
 b1111 %
-b1111 (
+b1111 *
 b10 $
-b10 '
-b10 &
+b10 )
+b10 (
 #1250
-1;
-12
+1=
+14
 #1300
 b1101 !
-b1101 )
-1<
-1+
+b1101 +
+1>
+1-
 #1350
 b1001 !
-b1001 )
-06
-17
+b1001 +
+08
+19
 #1400
-1*
+1,
 #1450
 b1 !
-b1 )
-0<
-1=
+b1 +
+0>
+1?
 1"
 #1500
 1#
 #1550
 0"
 #1800
-0.
-04
-13
+00
+06
+15
 b1001 %
-b1001 (
+b1001 *
 b110 $
-b110 '
-b11 &
+b110 )
+b11 (
 #1850
-1/
-02
+11
+04
 #1900
 b11 !
-b11 )
-10
-0+
+b11 +
+12
+0-
 #1950
 b111 !
-b111 )
-16
-07
+b111 +
+18
+09
 #2000
-0*
+0,
 #2050
 b1111 !
-b1111 )
-1<
-0=
+b1111 +
+1>
+0?
 1"
 #2100
 0#
 #2150
 0"
 #2400
-1.
-14
-0:
-19
-b111 %
-b111 (
-b1110 $
-b1110 '
-b100 &
-#2450
-0/
-12
-05
-18
-#2500
-00
-1+
-b1001 !
-b1001 )
-06
-1*
-#2550
+10
 16
-b101 !
-b101 )
 0<
-1=
+1;
+b111 %
+b111 *
+b1110 $
+b1110 )
+b100 (
+#2450
+01
+14
+07
+1:
+#2500
+02
+1-
+b1001 !
+b1001 +
+08
+1,
+#2550
+18
+b101 !
+b101 +
+0>
+1?
 1"
 #2600
 1#
 #2650
 0"
 #3000
-0@
-0.
-04
-1?
-03
+0B
+00
+06
+1A
+05
 b0 %
-b0 (
+b0 *
 b1011 $
-b1011 '
-b101 &
+b1011 )
+b101 (
 #3050
-1/
-02
-08
+11
+04
+0:
 #3100
 b111 !
-b111 )
-10
-0+
-0*
+b111 +
+12
+0-
+0,
 #3150
-06
+08
 b1011 !
-b1011 )
-1<
-0=
+b1011 +
+1>
+0?
 1"
 #3200
 0#
 #3250
 0"
 #3600
-1.
-1:
-0?
-0-
-b1010 %
-b1010 (
-b1000 $
-b1000 '
-b110 &
-#3650
-0;
-1>
-b1010 !
-b1010 )
+10
+1<
 0A
+0/
+b1010 %
+b1010 *
+b1000 $
+b1000 )
+b110 (
+#3650
+0=
+1@
+b1010 !
+b1010 +
+0C
 #3700
 b10 !
-b10 )
-0<
+b10 +
+0>
 1#
 #3750
 1"
 #4200
-1@
-0.
-14
-13
+1B
+00
+16
+15
 b1101 %
-b1101 (
+b1101 *
 b1100 $
-b1100 '
-b111 &
+b1100 )
+b111 (
 #4250
 b11 !
-b11 )
-1A
-0/
-18
+b11 +
+1C
+01
+1:
 #4300
 b1 !
-b1 )
-00
-1*
+b1 +
+02
+1,
 #4350
 b1001 !
-b1001 )
-1<
+b1001 +
+1>
 0"
 #4800
-1.
-0:
-1?
-1-
-09
+10
+0<
+1A
+1/
+0;
 b111 %
-b111 (
+b111 *
 b111 $
-b111 '
-b1000 &
+b111 )
+b1000 (
 #4850
 b1000 !
-b1000 )
-0A
-1,
-12
-0>
+b1000 +
+0C
+1.
+14
+0@
 #4900
 b1010 !
-b1010 )
-10
-1+
+b1010 +
+12
+1-
 0#
 #4950
 b1110 !
-b1110 )
-16
+b1110 +
+18
 1"
 #5400
-0@
-0.
-04
+0B
+00
+06
 b0 %
-b0 (
-b1001 &
+b0 *
+b1001 (
 #5450
 b1111 !
-b1111 )
-1A
-0,
-1/
-02
-15
-08
-#5500
-0+
-b1011 !
-b1011 )
-06
+b1111 +
+1C
+0.
+11
+04
 17
-0*
+0:
+#5500
+0-
+b1011 !
+b1011 +
+08
+19
+0,
 #5550
-16
-07
-1*
+18
+09
+1,
 b111 !
-b111 )
-0<
+b111 +
+0>
 0"
 #5600
-0*
+0,
 b1111 !
-b1111 )
-1<
+b1111 +
+1>
 1"
 #5650
 b111 !
-b111 )
-0<
+b111 +
+0>
 0"
 #6000
-1:
+1<
 b1000 %
-b1000 (
-b1010 &
+b1000 *
+b1010 (
 #6050
-1;
+1=
 #6100
 b1111 !
-b1111 )
-1<
+b1111 +
+1>
 #6600
-0?
-0-
-03
-b0 $
-b0 '
-b1011 &
-#6650
-b1110 !
-b1110 )
 0A
 0/
 05
+b0 $
+b0 )
+b1011 (
+#6650
+b1110 !
+b1110 +
+0C
+01
+07
 #6700
-00
+02
 b1000 !
-b1000 )
-06
+b1000 +
+08
 #7200
-19
+1;
 b1000 $
-b1000 '
-b1100 &
+b1000 )
+b1100 (
 #7250
-0;
-1>
+0=
+1@
 #7300
 b0 !
-b0 )
-0<
+b0 +
+0>
 1#
 #7350
 1"
 #7800
-1@
-1.
-14
-09
-b1111 %
-b1111 (
-b0 $
-b0 '
-b1101 &
-#7850
-b1 !
-b1 )
-1A
-1/
-15
-1;
-0>
-#7900
+1B
 10
 16
+0;
+b1111 %
+b1111 *
+b0 $
+b0 )
+b1101 (
+#7850
+b1 !
+b1 +
+1C
+11
+17
+1=
+0@
+#7900
+12
+18
 b1111 !
-b1111 )
-1<
+b1111 +
+1>
 0#
 #7950
 0"
 #8400
-0@
-0.
-04
-0:
-b0 %
-b0 (
-b1110 &
-#8450
-b1110 !
-b1110 )
-0A
-0/
-05
-0;
-#8500
+0B
 00
 06
-b0 !
-b0 )
 0<
+b0 %
+b0 *
+b1110 (
+#8450
+b1110 !
+b1110 +
+0C
+01
+07
+0=
+#8500
+02
+08
+b0 !
+b0 +
+0>
 #9000
-1@
+1B
+10
+16
+1<
+1A
+1/
+15
+1;
+b1111 %
+b1111 *
+b1111 $
+b1111 )
+b1111 (
+#9050
 1.
 14
 1:
-1?
-1-
-13
-19
-b1111 %
-b1111 (
-b1111 $
-b1111 '
-b1111 &
-#9050
-1,
-12
-18
-1>
+1@
 #9100
 b10 !
-b10 )
-10
-1+
-1*
+b10 +
+12
+1-
+1,
 1#
 #9150
-16
+18
 b1110 !
-b1110 )
-1<
+b1110 +
+1>
 #9600
-b10000 &
+b10000 (
