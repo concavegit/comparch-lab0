@@ -71,7 +71,7 @@ The remaining 8 test cases are "extreme" test cases, such as 7 + 0, 7 - 8, 0 - 8
 - Test Case 14: Extreme case 6: -8 + 7
 - Test case 15: Extreme case 7: 0 + 0
 
-# Test Case Failures
+# Test Bench Failures and Explanation
 The logic was correct the entire time.
 However, the failures which did occur was the use of `$monitor` without a enough of a delay for a stable signal, and so the last results to print for a given combination of inputs were incorrect.
 The design change was to estimate the timing of each chip to find a reasonable delay to put in the test bench (this was done before making the tables in the above Timing/Waveform section):
@@ -81,6 +81,11 @@ The design change was to estimate the timing of each chip to find a reasonable d
 - adder: 550 time units, because the overflow bit requires information from a sequence of 1 halfadder, 3 fulladders, and an XOR.
 
 Because the adder was estimated to have a maximum propagation delay of 550 time units, we changed a delay of 100 time units to a delay of 600 time units to observe the stable signal for 50 time units.
+
+To verify the outputs and catch errors, we manually found the desired sum, carry, and overflow outputs and put them in buses.
+Afterwards, we iterated through the buses to display a caught error as well as the desired output.
+Behavioral verilog could have given us a sum without needing a hard code, but the carry and overflow bits would have been tricky to do without hardcoding.
+Since there are only 16 test cases, we decided to hardcode everything.
 
 # Testing performed on the FPGA board
 We used the switches and the operator input button to set hte inputs and checked the corresponding LEDs for the correct output.
