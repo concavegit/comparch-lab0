@@ -92,3 +92,16 @@ We used the switches and the operator input button to set hte inputs and checked
 These tests came out as successful.
 
 # Summary Statistics
+
+Of the avialable resources, this was our usage
+
+
+|       | Avialable | Used |
+|-------|---        |---   |
+| LUT   | 17600     |   7  |
+| IO    |   100     |  13  |
+| FF    | 35200     |   9  |
+| BUFG  |    32     |   1  |
+
+So we used 7 of the 17600 available look up tables, 13 of the 100 IOs, 9 of the 35200 FFs and 1 of the 32 clocks.
+From this we can see that our full addder was a very simple piece and there is much more that can be implemented on the FPGA.
