@@ -89,7 +89,9 @@ Since there are only 16 test cases, we decided to hardcode everything.
 
 # Testing performed on the FPGA board
 We used the switches and the operator input button to set hte inputs and checked the corresponding LEDs for the correct output.
-These tests came out as successful.
+These tests came out as successful, as shown below for 5 + 3 (overflow):
+
+![](res/5plus3.gif)
 
 # Summary Statistics
 
