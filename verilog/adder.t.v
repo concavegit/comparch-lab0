@@ -22,8 +22,7 @@ module fulladder4bit_tb ();
       $dumpfile("test.vcd");
       $dumpvars();
 
-      // As far as I know, there is no better way to do this in
-      // non-System Verilog.
+      // Hard-code inputs and 'correct' outputs
 
       testA[0] = 4'b0101; testA[1] = 4'b0101; testA[2] = 4'b0100;
       testA[3] = 4'b0010; testA[4] = 4'b0110; testA[5] = 4'b1110;
@@ -39,13 +38,13 @@ module fulladder4bit_tb ();
       testB[12] = 4'b1000; testB[13] = 4'b1000; testB[14] = 4'b1111;
       testB[15] = 4'b0000;
 
-      testSum[0] = 4'b0000; testSum[1] = 4'b1000; testSum[2] =
-      4'b0101; testSum[3] = 4'b0001; testSum[4] = 4'b1111; testSum[5]
-      = 4'b0101; testSum[6] = 4'b1011; testSum[7] = 4'b0010;
-      testSum[8] = 4'b1001; testSum[9] = 4'b1110; testSum[10] =
-      4'b0111; testSum[11] = 4'b1111; testSum[12] = 4'b1000;
-      testSum[13] = 4'b0000; testSum[14] = 4'b1111; testSum[15] =
-      4'b0000;
+      testSum[0] = 4'b0000; testSum[1] = 4'b1000;
+      testSum[2] = 4'b0101; testSum[3] = 4'b0001; testSum[4] = 4'b1111;
+      testSum[5] = 4'b0101; testSum[6] = 4'b1011; testSum[7] = 4'b0010;
+      testSum[8] = 4'b1001; testSum[9] = 4'b1110;
+      testSum[10] = 4'b0111; testSum[11] = 4'b1111;
+      testSum[12] = 4'b1000; testSum[13] = 4'b0000;
+      testSum[14] = 4'b1111; testSum[15] = 4'b0000;
 
       testCarry[0] = 1; testCarry[1] = 0; testCarry[2] = 0;
       testCarry[3] = 1; testCarry[4] = 0; testCarry[5] = 1;
@@ -58,13 +57,17 @@ module fulladder4bit_tb ();
       testOverflow[3] = 0; testOverflow[4] = 0; testOverflow[5] = 0;
       testOverflow[6] = 0; testOverflow[7] = 1; testOverflow[8] = 0;
       testOverflow[9] = 1; testOverflow[10] = 0; testOverflow[11] = 0;
-      testOverflow[12] = 0; testOverflow[13] = 1; testOverflow[14] =
-      0; testOverflow[15] = 0;
+      testOverflow[12] = 0; testOverflow[13] = 1;
+      testOverflow[14] = 0; testOverflow[15] = 0;
 
+      // Iterate through all hard-coded inputs and outputs
       for (ii = 0; ii < 16; ii = ii+1) begin
          a = testA[ii];
          b = testB[ii];
          # 600
+
+           // If the output is not the 'correct' output, display the
+           // failed case and desired output.
            if ((sum != testSum[ii]) || (carry != testCarry[ii]) || (overflow != testOverflow[ii]))
              $display("Case %d, a = %b, b = %b:", ii, a, b);
          if (sum != testSum[ii]) 
