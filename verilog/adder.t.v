@@ -40,6 +40,16 @@ module fulladder4bit_tb ();
 			testSum[8] = 4'b1110; testSum[9] = 4'b0111; testSum[10] = 4'b1111; testSum[11] = 4'b1000;
 			testSum[12] = 4'b0000; testSum[13] = 4'b1111; testSum[14] = 4'b0000; testSum[15] = 4'b1110;
 
+			testCarry[0] = 0; testCarry[1] = 0; testCarry[2] = 1; testCarry[3] = 0;
+			testCarry[4] = 1; testCarry[5] = 0; testCarry[6] = 1; testCarry[7] = 1;
+			testCarry[8] = 0; testCarry[9] = 0; testCarry[10] = 0; testCarry[11] = 0;
+			testCarry[12] = 1; testCarry[13] = 0; testCarry[14] = 0; testCarry[15] = 1;
+
+			testOverflow[0] = 1; testOverflow[1] = 0; testOverflow[2] = 0; testOverflow[3] = 0;
+			testOverflow[4] = 0; testOverflow[5] = 0; testOverflow[6] = 1; testOverflow[7] = 0;
+			testOverflow[8] = 1; testOverflow[9] = 0; testOverflow[10] = 0; testOverflow[11] = 0;
+			testOverflow[12] = 1; testOverflow[13] = 0; testOverflow[14] = 0; testOverflow[15] = 0;
+
 			for (ii = 0; ii < 16; ii = ii+1) begin
 				a = testA[ii];
 				b = testB[ii];

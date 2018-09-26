@@ -1,5 +1,5 @@
 $date
-	Tue Sep 25 22:07:49 2018
+	Tue Sep 25 22:26:25 2018
 $end
 $version
 	Icarus Verilog
@@ -130,8 +130,8 @@ bx +
 b11 *
 b101 )
 b0 (
-bx '
-bx &
+b1000101000001 '
+b1001000011010100 &
 b11 %
 b101 $
 x#
