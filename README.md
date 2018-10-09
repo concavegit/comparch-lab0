@@ -1,4 +1,5 @@
 # Lab0
+Kawin Nikomborirak, Adam Selker, Sreekanth Sajjala.
 
 # Timing/Waveform
 The tables for the amount of gates each input passes through to reach each output are shown below:
